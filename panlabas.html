@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALAKALANG PANLABAS</title>
+    <style>
+        :root {
+            --dark-red: #4a0404;
+            --mid-red: #8b0000;
+            --bright-red: #b22222;
+            --accent-red: #ff4d4d;
+            --border-red: #2a0202;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?q=80&w=2071&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+        }
+
+        #background {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .head {
+            background-color: var(--dark-red);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        #main-content {
+            margin: 0 50px 50px 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section {
+            background-color: var(--bright-red);
+            border: 2px solid var(--border-red);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .section ul, .section ol {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .two-columns .box {
+            width: 45%;
+            background-color: var(--bright-red);
+            border: 2px solid var(--border-red);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .program, .lastt {
+            background-color: #300000;
+            border: 2px solid black;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .program ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .program li {
+            background-color: var(--bright-red);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 1px solid white;
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table td {
+            padding: 15px;
+            border: 1px solid var(--dark-red);
+        }
+
+        table .title {
+            background-color: #300000;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #300000;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 900px) {
+            #main-content {
+                margin: 0 10px 30px 10px;
+            }
+
+            .two-columns .box {
+                width: 95%;
+            }
+
+            .program li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="background">
+    <div class="head">
+        <h1>LESSON 6: PATAKARANG PANLABAS</h1>
+    </div>
+
+    <div id="main-content">
+
+        <div class="section">
+            <h2>KALAKALANG PANLABAS</h2>
+            <ul>
+                <li>Ito ay tumutukoy sa palitan ng mga produkto at serbisyo sa pagitan ng mga bansa.</li>
+                <li><strong>Bilateral Trade:</strong> Kalakalan sa pagitan ng dalawang bansa.</li>
+                <li><strong>Multilateral Trade:</strong> Kalakalan sa pagitan ng higit sa dalawang bansa.</li>
+                <li><strong>Eksport:</strong> Pagpapadala ng produkto sa ibang bansa.</li>
+                <li><strong>Import:</strong> Pagbili ng produkto mula sa ibang bansa.</li>
+            </ul>
+        </div>
+
+        <div class="two-columns">
+            <div class="box">
+                <h2>BATAYAN NG KALAKALANG PANLABAS</h2>
+                <ul>
+                    <li><strong>Absolute Advantage:</strong> Kapag ang bansa ay nakakalikha ng mas maraming bilang ng produkto gamit ang mas kaunting salik ng produksyon.</li>
+                    <li><strong>Comparative Advantage:</strong> Ang pagtuon ng bansa sa paglikha ng produkto kung saan mayroon itong mas mababang opportunity cost.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>DAHILAN NG KALAKALANG PANLABAS</h2>
+                <ol>
+                    <li>Pagkakaiba sa Teknolohiya.</li>
+                    <li>Pagkakaiba sa Pinagkukunang-yaman.</li>
+                    <li>Pagkakaiba sa Panlasa.</li>
+                    <li>Pagkakaiba sa Halaga ng Produksyon.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="program">
+            <h2>PATAKARANG UMAAPEKTO SA KALAKALANG PANLABAS</h2>
+            <p>Layunin nito na mapangalagaan ang lokal na industriya mula sa kompetisyon ng dayuhang kalakal.</p>
+            <ul>
+                <li><strong>Taripa:</strong> Buwis sa inaangkat na produkto.</li>
+                <li><strong>Kota:</strong> Limitasyon sa dami ng produktong aangkatin.</li>
+                <li><strong>Subsidi:</strong> Tulong ng pamahalaan sa lokal na negosyante.</li>
+            </ul>
+        </div>
+
+        <div class="lastt">
+            <h2>BALANCE OF TRADE (BOT)</h2>
+            <ul>
+                <li><strong>Trade Surplus:</strong> Kapag mas mataas ang halaga ng eksport kaysa sa import.</li>
+                <li><strong>Trade Deficit:</strong> Kapag mas mataas ang halaga ng import kaysa sa eksport.</li>
+                <li><strong>Balance of Payment (BOP):</strong> Talaan ng lahat ng transaksyong pang-ekonomiya ng bansa sa buong mundo.</li>
+            </ul>
+        </div>
+
+        <div class="two-columns">
+            <div class="box">
+                <h3>KABUTIHAN NG PAKIKIPAGKALAKALAN</h3>
+                <ul>
+                    <li>Mas maraming produkto ang mapagpipilian sa pamilihan.</li>
+                    <li>Napapataas ang kalidad ng mga produkto dahil sa kompetisyon.</li>
+                    <li>Nagkakaroon ng pagkakaunawaan at ugnayan sa pagitan ng mga bansa.</li>
+                    <li>Pagpapalawak ng pamilihan para sa lokal na produkto.</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>DI-KABUTIHAN NG PAKIKIPAGKALAKALAN</h3>
+                <ul>
+                    <li>Nagiging palaasa ang mga mamamayan sa dayuhang produkto.</li>
+                    <li>Hindi nalilinang ang sariling pagkamalikhain dahil sa imported na produkto.</li>
+                    <li>Pagkawala ng sariling pagkakakilanlan bunga ng dayuhang kultura.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="two-columns">
+            <div class="box">
+                <h3>World Trade Organization (WTO)</h3>
+                <p>Naitatag noong 1995 bilang kahalili ng GATT. Ito ang namamahala sa pandaigdigang patakaran ng kalakalan at nagnanais ng kaayusan sa pagitan ng mga kasaping bansa.</p>
+            </div>
+            <div class="box">
+                <h3>APEC at ASEAN</h3>
+                <p><strong>Asia-Pacific Economic Cooperation (APEC):</strong> Samahan ng 21 bansa na naglalayong isulong ang kaunlarang pang-ekonomiya sa rehiyong Asia-Pacific.</p>
+                <p><strong>Association of Southeast Asian Nations (ASEAN):</strong> Naglalayong paunlarin ang kooperasyong pang-ekonomiya at panlipunan sa Timog-Silangang Asya.</p>
+            </div>
+        </div>
+
+        <div class="lastt">
+            <h2>PROGRAMANG NAGTATAGUYOD SA KALAKALANG PANLABAS</h2>
+            <table>
+                <tr><td><strong>Liberalisasyon sa Sektor ng Pagbabangko (R.A. 7721):</strong> Pagpayag sa pagpasok ng dayuhang bangko sa bansa.</td></tr>
+                <tr><td><strong>Foreign Trade Services Corps (FTSC):</strong> Sangay na nagtataguyod ng mga lokal na produkto sa labas ng bansa.</td></tr>
+                <tr><td><strong>Trade and Industry Information Center (TIIC):</strong> Nagbibigay ng impormasyon tungkol sa kalakalan at industriya.</td></tr>
+                <tr><td><strong>Center for Industrial Competitiveness:</strong> Naglulunsad ng programa upang mapahusay ang kakayahan ng mga lokal na industriya.</td></tr>
+            </table>
+        </div>
+
+        <div class="lastt">
+            <h2>TERMINOLOHIYA</h2>
+            <table>
+                <tr class="title">
+                    <td>Termino</td>
+                    <td>Kahulugan</td>
+                </tr>
+                <tr>
+                    <td><strong>Dumping</strong></td>
+                    <td>Pagbebenta ng produkto sa ibang bansa sa presyong mas mababa kaysa sa lokal na presyo nito.</td>
+                </tr>
+                <tr>
+                    <td><strong>Deregulasyon</strong></td>
+                    <td>Pagtanggal ng kontrol ng pamahalaan sa isang partikular na industriya.</td>
+                </tr>
+                <tr>
+                    <td><strong>Pribatisasyon</strong></td>
+                    <td>Paglilipat ng pamamahala ng isang kumpanya mula sa gobyerno patungo sa pribadong sektor.</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>JUDE C. GABUTE | 9-FAIRNESS | ARALING PANLIPUNAN | IKAAPAT NA MARKAHAN</p>
+    </footer>
+</div>
+
+</body>
+</html>

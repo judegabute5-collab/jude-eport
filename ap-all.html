@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fil" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araling Panlipunan Lessons</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Source+Sans+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    
+    .economics-bg {
+      background: linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #1a202c 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    .economics-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffd700' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23ffd700' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23ffd700' stroke-opacity='0.03' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23ffd700' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    
+    /* Floating economic symbols */
+    .float-symbol {
+      position: absolute;
+      opacity: 0.08;
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+      color: #ffd700;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-20px) rotate(5deg); }
+      50% { transform: translateY(-10px) rotate(-5deg); }
+      75% { transform: translateY(-25px) rotate(3deg); }
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ffd700, #f6ad55);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: #ffd700;
+    }
+    
+    .markahan-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,215,0,0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .markahan-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .markahan-card:hover::before {
+      left: 100%;
+    }
+    
+    .markahan-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(255,215,0,0.5);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 30px rgba(255,215,0,0.15);
+    }
+    
+    .card-icon {
+      background: linear-gradient(135deg, #ffd700 0%, #f6ad55 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .title-gradient {
+      background: linear-gradient(135deg, #ffd700 0%, #ffffff 50%, #ffd700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 40px rgba(255,215,0,0.3);
+    }
+    
+    .subtitle-text {
+      color: #e2e8f0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    /* Graph lines decoration */
+    .graph-decoration {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      opacity: 0.05;
+      background: 
+        linear-gradient(90deg, transparent 49%, #ffd700 49%, #ffd700 51%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #ffd700 49%, #ffd700 51%, transparent 51%);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="economics-bg h-full overflow-auto"><!-- Floating Economic Symbols -->
+  <div class="float-symbol text-6xl" style="top: 15%; left: 5%; animation-delay: 0s;">
+   ₱
+  </div>
+  <div class="float-symbol text-5xl" style="top: 25%; right: 10%; animation-delay: 3s;">
+   📊
+  </div>
+  <div class="float-symbol text-6xl" style="top: 60%; left: 8%; animation-delay: 6s;">
+   📈
+  </div>
+  <div class="float-symbol text-5xl" style="top: 70%; right: 5%; animation-delay: 9s;">
+   🏛️
+  </div>
+  <div class="float-symbol text-4xl" style="top: 40%; left: 15%; animation-delay: 12s;">
+   💹
+  </div>
+  <div class="float-symbol text-5xl" style="top: 80%; left: 20%; animation-delay: 15s;">
+   🌏
+  </div><!-- Graph Decoration -->
+  <div class="graph-decoration"></div>
+  <div class="relative z-10 min-h-full flex flex-col"><!-- Navigation Dashboard -->
+   <nav class="bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-md border-b border-yellow-500/20 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-center h-16 gap-2 sm:gap-8 flex-wrap py-2"><a href="main.html" class="nav-link flex items-center gap-2 text-gray-200 font-semibold text-sm sm:text-base px-3 py-2" style="font-family: 'Source Sans Pro', sans-serif;"> <i data-lucide="home" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span>Home</span> </a> <a href="me.html" class="nav-link flex items-center gap-2 text-gray-200 font-semibold text-sm sm:text-base px-3 py-2" style="font-family: 'Source Sans Pro', sans-serif;"> <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span>About Me</span> </a> <a href="ict.html" class="nav-link flex items-center gap-2 text-gray-200 font-semibold text-sm sm:text-base px-3 py-2" style="font-family: 'Source Sans Pro', sans-serif;"> <i data-lucide="monitor" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span>ICT Browser Outputs</span> </a> <a href="events.html" class="nav-link flex items-center gap-2 text-gray-200 font-semibold text-sm sm:text-base px-3 py-2" style="font-family: 'Source Sans Pro', sans-serif;"> <i data-lucide="calendar" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span>School Events</span> </a> <a href="noli.html" class="nav-link flex items-center gap-2 text-gray-200 font-semibold text-sm sm:text-base px-3 py-2" style="font-family: 'Source Sans Pro', sans-serif;"> <i data-lucide="book-open" class="w-4 h-4 sm:w-5 sm:h-5"></i> <span>Noli Play</span> </a>
+     </div>
+    </div>
+   </nav><!-- Main Content -->
+   <main class="flex-1 flex flex-col items-center justify-center px-4 py-12"><!-- Header Section -->
+    <div class="text-center mb-16">
+     <div class="flex items-center justify-center gap-4 mb-4"><span class="text-4xl">🏛️</span>
+      <h1 id="main-title" class="title-gradient text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wide" style="font-family: 'Playfair Display', serif;">ARALING PANLIPUNAN LESSONS</h1><span class="text-4xl">📊</span>
+     </div>
+     <div class="flex items-center justify-center gap-3">
+      <div class="h-px w-16 bg-gradient-to-r from-transparent to-yellow-500/50"></div>
+      <h2 id="sub-title" class="subtitle-text text-xl sm:text-2xl md:text-3xl font-semibold tracking-widest" style="font-family: 'Source Sans Pro', sans-serif;">Ikalawa at Ikaapat na Markahan</h2>
+      <div class="h-px w-16 bg-gradient-to-l from-transparent to-yellow-500/50"></div>
+     </div>
+    </div><!-- Markahan Cards -->
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12 max-w-4xl w-full justify-center"><!-- Ikalawang Markahan --> <a href="ap3.html" class="markahan-card group rounded-2xl p-8 sm:p-10 flex-1 max-w-md text-center cursor-pointer">
+      <div class="mb-6">
+       <div class="w-20 h-20 mx-auto bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"><span class="text-4xl">📈</span>
+       </div>
+       <div class="card-icon text-6xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">
+        II
+       </div>
+      </div><h3 class="text-white text-2xl sm:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">IKALAWANG MARKAHAN</h3><p class="text-gray-400 text-sm" style="font-family: 'Source Sans Pro', sans-serif;">Second Quarter Lessons</p>
+      <div class="mt-6 flex items-center justify-center gap-2 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><span class="text-sm font-semibold" style="font-family: 'Source Sans Pro', sans-serif;">Explore Lessons</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </div></a> <!-- Ikaapat na Markahan --> <a href="apmain.html" class="markahan-card group rounded-2xl p-8 sm:p-10 flex-1 max-w-md text-center cursor-pointer">
+      <div class="mb-6">
+       <div class="w-20 h-20 mx-auto bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"><span class="text-4xl">🌏</span>
+       </div>
+       <div class="card-icon text-6xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">
+        IV
+       </div>
+      </div><h3 class="text-white text-2xl sm:text-3xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">IKAAPAT NA MARKAHAN</h3><p class="text-gray-400 text-sm" style="font-family: 'Source Sans Pro', sans-serif;">Fourth Quarter Lessons</p>
+      <div class="mt-6 flex items-center justify-center gap-2 text-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"><span class="text-sm font-semibold" style="font-family: 'Source Sans Pro', sans-serif;">Explore Lessons</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </div></a>
+    </div><!-- Decorative Footer Element -->
+    <div class="mt-16 flex items-center gap-4 text-gray-500">
+     <div class="h-px w-20 bg-gradient-to-r from-transparent to-gray-600"></div><span class="text-2xl">💹</span> <span class="text-sm font-medium tracking-wider" style="font-family: 'Source Sans Pro', sans-serif;">EKONOMIKS AT LIPUNAN</span> <span class="text-2xl">📊</span>
+     <div class="h-px w-20 bg-gradient-to-l from-transparent to-gray-600"></div>
+    </div>
+   </main>
+  </div>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Default configuration
+    const defaultConfig = {
+      main_title: 'ARALING PANLIPUNAN LESSONS',
+      sub_title: 'Ikalawa at Ikaapat na Markahan',
+      background_color: '#1a365d',
+      surface_color: 'rgba(255,255,255,0.1)',
+      text_color: '#ffffff',
+      primary_action: '#ffd700',
+      secondary_action: '#f6ad55'
+    };
+
+    // Initialize Element SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Update main title
+          const mainTitle = document.getElementById('main-title');
+          if (mainTitle) {
+            mainTitle.textContent = config.main_title || defaultConfig.main_title;
+          }
+
+          // Update subtitle
+          const subTitle = document.getElementById('sub-title');
+          if (subTitle) {
+            subTitle.textContent = config.sub_title || defaultConfig.sub_title;
+          }
+
+          // Apply colors
+          const bgColor = config.background_color || defaultConfig.background_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+          const primaryColor = config.primary_action || defaultConfig.primary_action;
+
+          // Update CSS custom properties for dynamic theming
+          document.documentElement.style.setProperty('--bg-color', bgColor);
+          document.documentElement.style.setProperty('--text-color', textColor);
+          document.documentElement.style.setProperty('--primary-color', primaryColor);
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action || defaultConfig.primary_action,
+              set: (value) => {
+                config.primary_action = value;
+                window.elementSdk.setConfig({ primary_action: value });
+              }
+            },
+            {
+              get: () => config.secondary_action || defaultConfig.secondary_action,
+              set: (value) => {
+                config.secondary_action = value;
+                window.elementSdk.setConfig({ secondary_action: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['main_title', config.main_title || defaultConfig.main_title],
+          ['sub_title', config.sub_title || defaultConfig.sub_title]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9da301f8c47dddfb',t:'MTc3MzE1MjkyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

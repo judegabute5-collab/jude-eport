@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Events Reflection</title>
+  <style>
+    /* ---------- General Style ---------- */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f0f7ff, #ffffff);
+      color: #2a2a2a;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      color: #0b3d91;
+      font-size: 30px;
+      margin-top: 30px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      color: #5a6fdb;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      width: 80%;
+      background: #0b3d91;
+      margin: 15px auto;
+      border-radius: 3px;
+    }
+
+    /* ---------- Event Title Cards ---------- */
+    .event-title {
+      text-align: center;
+      background: linear-gradient(to right, #b4c9ff, #eaf1ff);
+      color: #0b3d91;
+      padding: 12px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+      width: fit-content;
+      margin: 40px auto 20px;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    /* ---------- Container Layout ---------- */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin: 20px auto;
+      max-width: 1100px;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    /* ---------- Media Cards ---------- */
+    .image-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(12, 24, 64, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      overflow: hidden;
+    }
+
+    .image-text:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(12, 24, 64, 0.12);
+    }
+
+    .media {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 3px solid rgba(28,21,255,0.12);
+      box-shadow: 0 6px 14px rgba(12, 24, 64, 0.08);
+      background: #eef6ff;
+    }
+
+    /* removed video styling */
+    .media img,
+    .media iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      display: block;
+    }
+
+    .image-text p {
+      font-weight: 600;
+      color: #0b3d91;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* ---------- Description Boxes ---------- */
+    .desc {
+      max-width: 880px;
+      background: #f7fbff;
+      margin: 20px auto 50px;
+      padding: 25px 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .desc p {
+      text-align: justify;
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin: 40px 0 20px;
+    }
+
+    /* ---------- Responsive Tweaks ---------- */
+    @media (max-width: 520px) {
+      .media { max-width: 100%; aspect-ratio: 4 / 3; }
+      .container { gap: 16px; margin: 20px auto; padding: 0 12px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SCHOOL EVENTS</h1>
+  <h2>Reflection</h2>
+  <hr>
+
+  <!-- ===== BUWAN NG WIKA ===== -->
+  <div class="event-title">BUWAN NG WIKA</div>
+  <div class="container">
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1XJ3mb29x2sHs0zGsSLxPcF24rF_OPhwj" alt="Buwan ng Wika">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1hU-a5sXOTngcCg-gDHgR4TEl4c6Wfp1p" alt="Buwan ng Wika">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <iframe src="https://drive.google.com/file/d/1szPk8gGx73Zi81aA8v3GdRT1_JlDpiAI/preview" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <p>During the Buwan ng Wika celebration, I learned how important it is to appreciate and use our own language. It reminded me that Filipino is more than just a subject—it represents who we are as a nation. I can apply what I learned by using Filipino in daily communication and respecting our different cultures. I joined our class declamation performance as part of the event. Buwan ng Wika celebrates our national language and its significance in building pride and unity. This event helps strengthen our cultural identity and encourages everyone to value the beauty of our language.</p>
+  </div>
+
+  <!-- ===== SCIENCE MONTH ===== -->
+  <div class="event-title">SCIENCE MONTH</div>
+  <div class="container">
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1lPkB25J16GP5Ms4o2KSl07wH1maBTc2W" alt="Science Month">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1hgyf0jdYM13zthMoPoM1RUjkHKy44TZr" alt="Science Month">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <iframe src="https://drive.google.com/file/d/1fidGBqFWoWCnct_e_R9_OuNF_p_JcuXF/preview" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <p>I learned that science plays a big role in solving real-world problems and improving our quality of life. I can apply it by being curious, asking questions, and using scientific thinking in daily decisions. I participated by joining the quiz bee, poster making, and research colloquium. Science Month encourages innovation and shows how science connects to everyday life. It is important because it promotes awareness of scientific knowledge and inspires students to explore the world through discovery.</p>
+  </div>
+
+  <!-- ===== INTRAMURALS ===== -->
+  <div class="event-title">INTRAMURALS</div>
+  <div class="container">
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1XIrN-YUYZt8Hutj66-IpuWp7QkYrGJrl" alt="Intramurals">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1tj3VdS5AGBDEBwPUfUEWvwTkv3wuvxLE" alt="Intramurals">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <iframe src="https://drive.google.com/file/d/1mC4YbiOAuRKlHoQDrfUyAarxd_H1hiZJ/preview" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <p>I learned the value of teamwork, sportsmanship, and discipline through friendly competition. I can apply it by working well with others, being respectful, and staying active. I joined volleyball and sack race—our team placed 2nd and 1st respectively. Intramurals is not just about winning but about unity, hard work, and self-improvement. It promotes friendship and overall well-being in the school community.</p>
+  </div>
+
+  <!-- ===== TEACHERS’ DAY ===== -->
+  <div class="event-title">TEACHERS’ DAY</div>
+  <div class="container">
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1mckIzvTSDUtjTNLLiGuz09xgi9YWtGMv" alt="Teachers Day">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1fGtM9xzPf8UVAW18fRp5YP5fbfoWmE0U" alt="Teachers Day">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <iframe src="https://drive.google.com/file/d/1jDLEBc-2ubHIM6tZ2SRFSmzm7JcgQhdQ/preview" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <p>Teachers’ Day made me appreciate the hard work and sacrifices that teachers make every day. I can show gratitude by being respectful and doing my best in class. I joined our classroom celebration and gave letters and gifts to express my appreciation. This day honors teachers who shape our future and reminds us that even simple acts of kindness mean a lot. It’s an important celebration that highlights their role in our lives.</p>
+  </div>
+
+  <!-- ===== AP MONTH ===== -->
+  <div class="event-title">AP MONTH</div>
+  <div class="container">
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1QCl3rpVpw5KQHx0CTbttwFDTG3kgWYaZ" alt="AP Month">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <img src="https://drive.google.com/thumbnail?id=1djszhoQUfWduVfHWNt-Ojinpxb5XMjIs" alt="AP Month">
+      </div>
+    </div>
+
+    <div class="image-text">
+      <div class="media">
+        <iframe src="https://drive.google.com/file/d/188N40W-pPcxIkCRJvSTT5WTwyNjZAPXu/preview" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <p>AP Month helped me appreciate our country’s history and the importance of learning about society. I can apply it by being aware of current issues and understanding my role as a student in nation-building. I joined classroom discussions and interactive activities. This event is important because it promotes awareness and appreciation of our culture, heritage, and responsibility as Filipino citizens.</p>
+  </div>
+
+  <footer>| School Events Reflection Project |</footer>
+</body>
+</html>
