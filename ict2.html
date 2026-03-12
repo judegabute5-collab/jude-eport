@@ -1,14 +1,368 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3rd Quarter Browser Outputs | ICT</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&amp;family=Exo+2:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0a1628;
+      --surface-color: #1e3a5f;
+      --text-color: #e0f2ff;
+      --primary-action: #00d4ff;
+      --secondary-action: #64b5f6;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Exo 2', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+    
+    .font-heading {
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    /* Animated circuit background */
+    .circuit-bg {
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(100, 181, 246, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0a1628 0%, #0d2137 50%, #0a1628 100%);
+      position: relative;
+    }
+    
+    .circuit-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4ff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    
+    /* Glowing effects */
+    .glow-text {
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3);
+    }
+    
+    .glow-border {
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 0 15px rgba(0, 212, 255, 0.1);
+    }
+    
+    /* Card styling */
+    .output-card {
+      background: linear-gradient(145deg, rgba(30, 58, 95, 0.9) 0%, rgba(15, 35, 60, 0.9) 100%);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .output-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2), 0 0 20px rgba(0, 212, 255, 0.1);
+      border-color: rgba(0, 212, 255, 0.6);
+    }
+    
+    /* Image container */
+    .img-container {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      overflow: hidden;
+    }
+    
+    .img-container img {
+      transition: transform 0.3s ease;
+    }
+    
+    .img-container:hover img {
+      transform: scale(1.02);
+    }
+    
+    /* Navigation */
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary-action), transparent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary-action);
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+    
+    /* Section badges */
+    .section-badge {
+      background: linear-gradient(90deg, var(--primary-action), var(--secondary-action));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Animated pulse for decorative elements */
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    /* Binary decoration */
+    .binary-bg {
+      position: absolute;
+      font-family: monospace;
+      font-size: 10px;
+      color: rgba(0, 212, 255, 0.1);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+    
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface-color);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-action);
+    }
+    
+    /* File label styling */
+    .file-label {
+      background: linear-gradient(90deg, rgba(0, 212, 255, 0.2), transparent);
+      border-left: 3px solid var(--primary-action);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div class="circuit-bg min-h-full w-full"><!-- Binary decoration elements -->
+   <div class="binary-bg top-20 left-4 opacity-30">
+    01001001 01000011 01010100
+   </div>
+   <div class="binary-bg top-40 right-8 opacity-20">
+    10110100 11001010 01010101
+   </div><!-- Navigation -->
+   <nav class="sticky top-0 z-50 bg-gradient-to-r from-[#0a1628]/95 via-[#1e3a5f]/95 to-[#0a1628]/95 backdrop-blur-md border-b border-cyan-500/30">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+     <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-6 md:gap-8"><a href="main.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1"> <span class="flex items-center gap-1">
+        <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewbox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg> Home </span> </a> <a href="me.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1">About Me</a> <a href="ap-all.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1">AP Lessons</a> <a href="ict.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1 text-cyan-400">ICT Outputs</a> <a href="events-all.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1">School Events</a> <a href="noli.html" class="nav-link font-heading text-xs sm:text-sm font-medium text-cyan-100 px-2 py-1">Noli Play</a>
+     </div>
+    </div>
+   </nav><!-- Main Content -->
+   <main class="max-w-6xl mx-auto px-4 py-8 sm:py-12 relative"><!-- Header Section -->
+    <header class="text-center mb-12 sm:mb-16">
+     <div class="inline-block mb-4"><span class="text-xs sm:text-sm font-heading tracking-[0.3em] text-cyan-400/80 uppercase">Information &amp; Communications Technology</span>
+     </div>
+     <h1 id="main-title" class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold glow-text mb-4" style="color: var(--primary-action);">3rd Quarter Browser Outputs</h1>
+     <div class="flex items-center justify-center gap-4 mt-6">
+      <div class="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent to-cyan-500"></div>
+      <svg class="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400 pulse-glow" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+      </svg>
+      <div class="h-px w-16 sm:w-24 bg-gradient-to-l from-transparent to-cyan-500"></div>
+     </div>
+     
+    </header><!-- Output Sections -->
+    <div class="space-y-12 sm:space-y-16"><!-- Typography Section -->
+     <section class="output-card rounded-2xl p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+       </div>
+       <div>
+        <h2 class="font-heading text-xl sm:text-2xl font-bold section-badge">Typography</h2>
+       </div>
+      </div>
+      <p class="text-cyan-100/80 mb-6 text-sm sm:text-base leading-relaxed">This exercise demonstrates the fundamental HTML typography elements including headings (h1-h6), paragraphs, and text hierarchy. The output showcases how different heading levels create visual structure and importance in web documents, establishing a clear content hierarchy that improves readability and accessibility.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">📄 HTML File</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1BvKsp2BsQu-aVR5ePe4-c27EV3AdW34m" alt="Typography HTML code showing heading elements and text structure" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">🌐 Browser Output</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=11sVDaZpjKzSLIVrrXjQQ9hDsatglLLD0" alt="Typography browser output showing rendered headings and text" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+      </div>
+     </section><!-- Formatting Text with CSS Section -->
+     <section class="output-card rounded-2xl p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <div>
+        <h2 class="font-heading text-xl sm:text-2xl font-bold section-badge">Formatting Text with CSS</h2>
+        
+       </div>
+      </div>
+      <p class="text-cyan-100/80 mb-6 text-sm sm:text-base leading-relaxed">This exercise explores CSS text formatting properties to enhance the visual presentation of text content. It demonstrates styling techniques including font families, font sizes, colors, text decoration, text alignment, and letter spacing. The output shows how CSS transforms plain HTML text into visually appealing and professionally styled content.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">📄 HTML File</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1YpqRHuOYEg4eAqtT-l8qqAChDVJlBZm_" alt="CSS text formatting HTML code with embedded styles" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">🌐 Browser Output</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1CzKJgMR99IuGDnvICqK1e151lFgy1Do9" alt="CSS text formatting browser output with styled text" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+      </div>
+     </section><!-- Formatting Layout with CSS Section -->
+     <section class="output-card rounded-2xl p-6 sm:p-8">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+        </svg>
+       </div>
+       <div>
+        <h2 class="font-heading text-xl sm:text-2xl font-bold section-badge">Formatting Layout with CSS</h2>
+        
+       </div>
+      </div>
+      <p class="text-cyan-100/80 mb-6 text-sm sm:text-base leading-relaxed">This advanced exercise demonstrates CSS layout techniques using the box model, margins, padding, borders, and positioning. It showcases how to structure page layouts, create visual containers, and arrange content effectively. The external CSS file approach demonstrates best practices for separating content from presentation, making the code more maintainable and organized.</p>
+      <div class="grid md:grid-cols-3 gap-6">
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">📄 HTML File</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1Mpduzi8YHQaEm1gBzN4_uepagP5odz2S" alt="CSS layout HTML file with linked stylesheet" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">🎨 CSS File</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1-MRJpeQKybW-ifSNVcpBt6cwxAtVNejo" alt="External CSS stylesheet with layout properties" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+       <div>
+        <div class="file-label px-4 py-2 rounded-t-lg"><span class="font-heading text-xs sm:text-sm text-cyan-400 font-medium">🌐 Browser Output</span>
+        </div>
+        <div class="img-container rounded-b-lg p-2"><img src="https://drive.google.com/thumbnail?id=1C8nQn5Nqhkh4ChW72VrzulYd50ET-L3e" alt="CSS layout browser output with styled containers" loading="lazy" class="w-full h-auto rounded" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%)'; this.style.minHeight='200px'; this.alt='Image unavailable';">
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+   </main><!-- Footer -->
+   <footer class="mt-12 border-t border-cyan-500/20 bg-gradient-to-r from-[#0a1628] via-[#1e3a5f]/50 to-[#0a1628]">
+    <div class="max-w-6xl mx-auto px-4 py-6 sm:py-8">
+     <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center gap-2">
+       <div class="w-2 h-2 rounded-full bg-cyan-400 pulse-glow"></div>
+       <div class="w-2 h-2 rounded-full bg-blue-400 pulse-glow" style="animation-delay: 0.3s;"></div>
+       <div class="w-2 h-2 rounded-full bg-indigo-400 pulse-glow" style="animation-delay: 0.6s;"></div>
+      </div>
+      <p id="footer-text" class="font-heading text-sm sm:text-base text-cyan-300/80 tracking-wider text-center">JUDE GABUTE | 9-FAIRNESS | LPSCI S.Y. 2025-2026</p>
+      
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: "3rd Quarter Browser Outputs",
+      footer_text: "JUDE GABUTE | 9-FAIRNESS | LPSCI S.Y. 2025-2026",
+      background_color: "#0a1628",
+      surface_color: "#1e3a5f",
+      text_color: "#e0f2ff",
+      primary_action: "#00d4ff",
+      secondary_action: "#64b5f6",
+      font_family: "Exo 2",
+      font_size: 16
+    };
 
-<body>
-  
-</body>
+    async function onConfigChange(config) {
+      const mainTitle = document.getElementById('main-title');
+      const footerText = document.getElementById('footer-text');
+      
+      if (mainTitle) {
+        mainTitle.textContent = config.main_title || defaultConfig.main_title;
+      }
+      
+      if (footerText) {
+        footerText.textContent = config.footer_text || defaultConfig.footer_text;
+      }
+      
+      // Apply colors
+      document.documentElement.style.setProperty('--bg-color', config.background_color || defaultConfig.background_color);
+      document.documentElement.style.setProperty('--surface-color', config.surface_color || defaultConfig.surface_color);
+      document.documentElement.style.setProperty('--text-color', config.text_color || defaultConfig.text_color);
+      document.documentElement.style.setProperty('--primary-action', config.primary_action || defaultConfig.primary_action);
+      document.documentElement.style.setProperty('--secondary-action', config.secondary_action || defaultConfig.secondary_action);
+      
+      // Apply background color
+      document.body.style.background = config.background_color || defaultConfig.background_color;
+      
+      // Apply text color
+      document.body.style.color = config.text_color || defaultConfig.text_color;
+      
+      // Apply primary action color to title
+      if (mainTitle) {
+        mainTitle.style.color = config.primary_action || defaultConfig.primary_action;
+      }
+      
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `'${fontFamily}', 'Exo 2', sans-serif`;
+      
+      // Apply font size
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
 
-</html>
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.ele
