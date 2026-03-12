@@ -137,12 +137,15 @@
     .stagger-2 { animation-delay: 0.2s; }
     .stagger-3 { animation-delay: 0.3s; }
     .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    .stagger-6 { animation-delay: 0.6s; }
   </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full">
-  <div id="app-wrapper" class="portfolio-bg h-full w-full overflow-auto relative z-10"><!-- Floating Tech Symbols -->
+  <div id="app-wrapper" class="portfolio-bg h-full w-full overflow-auto relative z-10">
+   <!-- Floating Tech Symbols -->
    <div class="float-symbol text-6xl" style="top: 10%; left: 5%; animation-delay: 0s;">
     📚
    </div>
@@ -156,168 +159,95 @@
     🎉
    </div><!-- Dashboard Navigation -->
    <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/40 to-transparent backdrop-blur-md border-b border-cyan-400/20">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><a href="index.html" class="flex items-center gap-2 text-white font-bold text-lg hover:text-cyan-300 transition"> <i data-lucide="home" class="w-5 h-5"></i> Dashboard </a>
-     <nav class="hidden md:flex items-center gap-8"><a href="me.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">About Me</a> <a href="ict.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">ICT</a> <a href="ap-all.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">AP Lessons</a> <a href="events-all.html" class="text-cyan-300 border-b-2 border-cyan-400 font-medium pb-1">Events</a> <a href="noli.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">Noli Play</a>
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+     <a href="index.html" class="flex items-center gap-2 text-white font-bold text-lg hover:text-cyan-300 transition"> <i data-lucide="home" class="w-5 h-5"></i> Dashboard </a>
+     <nav class="hidden md:flex items-center gap-8">
+      <a href="me.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">About Me</a> <a href="ict.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">ICT</a> <a href="ap-all.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">AP Lessons</a> <a href="events-all.html" class="text-cyan-300 border-b-2 border-cyan-400 font-medium pb-1">Events</a> <a href="noli.html" class="text-cyan-200 hover:text-cyan-100 transition font-medium">Noli Play</a>
      </nav>
     </div>
    </div><!-- Main Content -->
-   <div class="min-h-full w-full px-6 py-16 relative z-10"><!-- Header Section -->
+   <div class="min-h-full w-full px-6 py-16 relative z-10">
+    <!-- Header Section -->
     <section class="max-w-6xl mx-auto mb-20">
      <div class="text-center mb-16">
       <h1 id="page-title" class="hero-title text-5xl md:text-6xl font-black text-white mb-4" style="line-height: 1.1;">My School Events</h1>
       <p id="intro-text" class="hero-subtitle text-lg md:text-xl text-cyan-200 max-w-3xl mx-auto" style="opacity: 0;">A showcase of the events, activities, and experiences that have shaped my academic journey and personal growth.</p>
-     </div><!-- Events Grid -->
-     <div class="grid grid-cols-1 xl:grid-cols-3 gap-8"><!-- Math Month -->
+     </div><!-- Quarter Tabs -->
+     <div class="flex justify-center gap-4 mb-12"><button id="q3-tab" class="quarter-tab active px-8 py-3 rounded-lg font-semibold transition-all" style="background: linear-gradient(135deg, #00d4ff, #0ea5e9); color: white;">3rd Quarter Events</button> <button id="q4-tab" class="quarter-tab px-8 py-3 rounded-lg font-semibold transition-all" style="background: rgba(56,189,248,0.2); color: #00d4ff; border: 2px solid rgba(56,189,248,0.3);">4th Quarter Events</button>
+     </div><!-- 3rd Quarter Events Grid -->
+     <div class="grid grid-cols-1 xl:grid-cols-2 gap-8" id="q3-events">
+      <!-- Event 1: Math Month -->
       <div class="event-card stagger-1 rounded-2xl overflow-hidden p-8">
        <div class="event-header rounded-lg p-4 mb-6">
-        <div class="flex items-center gap-3"><i data-lucide="calculator" class="w-6 h-6"></i> <span>MATH MONTH</span>
+        <div class="flex items-center gap-3">
+         <i data-lucide="calculator" class="w-6 h-6"></i> <span>MATH MONTH</span>
         </div>
        </div>
-       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">During Math Month, I joined different activities with my classmates. I joined the Damath competition and finished in 4th place. Even though I did not win, the experience taught me to think fast and stay focused during the game. I felt proud because I still did my best during the competition.
-‎<br>
-‎I also participated in the Math Mural activity. Our section worked together to create a mural for the competition between sections in our batch. We shared ideas, helped each other, and tried to make our mural creative and meaningful. The activity showed our teamwork and effort as a class.
-<br>
-‎
-‎Overall, Math Month brought fun and excitement to our section. My classmates and I enjoyed the activities and supported each other. The event helped us appreciate math while spending time together as a class.</p>
-       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));"><img src="https://drive.google.com/thumbnail?id=1Ju2h2BNDFb3A1B39uc2OQxhByREPIr5A" alt="Math Month Activity 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1iGuYH3EQJaHyEl7r7UJIKpdKYtXia_2t" alt="Math Month Activity 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1ZPRlOML3pZ-Mi1sdn38enRrBMuS9cTOu" alt="Math Month Activity 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">During Math Month, I joined different activities with my classmates. I joined the Damath competition and finished in 4th place. Even though I did not win, the experience taught me to think fast and stay focused during the game. I felt proud because I still did my best during the competition.<br><br>
+        I also participated in the Math Mural activity. Our section worked together to create a mural for the competition between sections in our batch. We shared ideas, helped each other, and tried to make our mural creative and meaningful. The activity showed our teamwork and effort as a class.<br><br>
+        Overall, Math Month brought fun and excitement to our section. My classmates and I enjoyed the activities and supported each other. The event helped us appreciate math while spending time together as a class.</p>
+       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <img src="https://drive.google.com/thumbnail?id=1Ju2h2BNDFb3A1B39uc2OQxhByREPIr5A" alt="Math Month 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1iGuYH3EQJaHyEl7r7UJIKpdKYtXia_2t" alt="Math Month 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1ZPRlOML3pZ-Mi1sdn38enRrBMuS9cTOu" alt="Math Month 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
        </div>
-      </div><!-- English Month -->
+      </div><!-- Event 2: English Month -->
       <div class="event-card stagger-2 rounded-2xl overflow-hidden p-8">
        <div class="event-header rounded-lg p-4 mb-6">
-        <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-6 h-6"></i> <span>ENGLISH MONTH</span>
+        <div class="flex items-center gap-3">
+         <i data-lucide="book-open" class="w-6 h-6"></i> <span>ENGLISH MONTH</span>
         </div>
        </div>
-       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">English Month felt memorable for me because our section worked hard together. One of our biggest achievements was the door book cover competition. We designed our classroom door based on a chosen book. Everyone helped with ideas and decorations. When our section won, I felt proud because our effort as a class paid off.
-‎<br>
-‎I also supported our class representative in the Booklandia competition. I served as a backdrop during the performance. My role was small, but I still felt happy because I helped our class and showed support for my classmates. It felt nice to be part of something where everyone worked together.
-‎<br>
-‎We also had classroom activities like poster making and slogan making. I joined these, but I did not do well in them. Even though I felt a bit disappointed, I still saw it as a chance to learn. English Month taught me that winning feels good, but trying, supporting others, and learning from mistakes also matter.</p>
-       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));"><img src="https://drive.google.com/thumbnail?id=1MJrr5K02YUyMGrLy-dU27Fqw62GPRkui" alt="English Month Activity 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1OcJV3a1UwE4bAS1t_MtbIovRvOhVPzJF" alt="English Month Activity 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1jW2fGAAG8TZUyphIwaj5bLZrKP1KJzF0" alt="English Month Activity 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">English Month felt memorable for me because our section worked hard together. One of our biggest achievements was the door book cover competition. We designed our classroom door based on a chosen book. Everyone helped with ideas and decorations. When our section won, I felt proud because our effort as a class paid off.<br><br>
+        I also supported our class representative in the Booklandia competition. I served as a backdrop during the performance. My role was small, but I still felt happy because I helped our class and showed support for my classmates. It felt nice to be part of something where everyone worked together.<br><br>
+        We also had classroom activities like poster making and slogan making. I joined these, but I did not do well in them. Even though I felt a bit disappointed, I still saw it as a chance to learn. English Month taught me that winning feels good, but trying, supporting others, and learning from mistakes also matter.</p>
+       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <img src="https://drive.google.com/thumbnail?id=1MJrr5K02YUyMGrLy-dU27Fqw62GPRkui" alt="English Month 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1OcJV3a1UwE4bAS1x_MtbIovRvOhVPzJF" alt="English Month 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1jW2fGAAG8TZUyphIwaj5bLZrKP1KJzF0" alt="English Month 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
        </div>
-      </div><!-- MVP Event -->
+      </div><!-- Event 3: MVP -->
       <div class="event-card stagger-3 rounded-2xl overflow-hidden p-8">
        <div class="event-header rounded-lg p-4 mb-6">
-        <div class="flex items-center gap-3"><i data-lucide="crown" class="w-6 h-6"></i> <span>MVP EVENT</span>
+        <div class="flex items-center gap-3">
+         <i data-lucide="star" class="w-6 h-6"></i> <span>MOST VALUABLE PERSON (MVP)</span>
         </div>
        </div>
-       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">The MVP event felt meaningful for our section because everyone showed strong support for our representative. As a class, we cheered for them and helped in any way we could. Our representative joined the competition and won a title, which made our whole section proud.
-‎<br>
-‎We also worked together to create the sash for our representative. We spent time planning the design and making it look good. Our effort paid off because the sash also won Best Sash. Seeing our work recognized made us feel happy and proud of what we achieved as a team.
-‎<br>
-‎For me, this event showed the good values of our section. We showed teamwork, support, and unity. We also prayed and hoped for the best, and it felt like our prayers were answered. The whole experience reminded me that success feels more special when everyone works together and supports one another.
-‎</p>
-       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));"><img src="https://drive.google.com/thumbnail?id=13pZVF0fG3XhiEkzUlF0mQvsONS00BRkp" alt="MVP Activity 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1650Wd5eRxtKni1TKSCN5F3DHVrIkDq2h" alt="MVP Activity 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1usbtmeukcIt9mRdxEcpBKsot63xXuPlC" alt="MVP Activity 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">The MVP event felt meaningful for our section because everyone showed strong support for our representative. As a class, we cheered for them and helped in any way we could. Our representative joined the competition and won a title, which made our whole section proud.<br><br>
+        We also worked together to create the sash for our representative. We spent time planning the design and making it look good. Our effort paid off because the sash also won Best Sash. Seeing our work recognized made us feel happy and proud of what we achieved as a team.<br><br>
+        For me, this event showed the good values of our section. We showed teamwork, support, and unity. We also prayed and hoped for the best, and it felt like our prayers were answered. The whole experience reminded me that success feels more special when everyone works together and supports one another.</p>
+       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <img src="https://drive.google.com/thumbnail?id=13pZVF0fG3XhiEkzUlF0mQvsONS00BRkp" alt="MVP 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1650Wd5eRxtKni1TKSCN5F3DHVrIkDq2h" alt="MVP 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1usbtmeukcIt9mRdxEcpBKsot63xXuPlC" alt="MVP 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
        </div>
-      </div><!-- VPOP Showcase -->
+      </div><!-- Event 4: VPOP -->
       <div class="event-card stagger-4 rounded-2xl overflow-hidden p-8">
        <div class="event-header rounded-lg p-4 mb-6">
-        <div class="flex items-center gap-3"><i data-lucide="music" class="w-6 h-6"></i> <span>VPOP SHOWCASE</span>
+        <div class="flex items-center gap-3">
+         <i data-lucide="video" class="w-6 h-6"></i> <span>VPOP</span>
         </div>
        </div>
-       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">The VPOP dance competition became one of the most unforgettable experiences for our section. We spent many days practicing our routine. Sometimes our practices continued until the evening, but no one complained. Instead, we kept pushing ourselves because we all wanted to perform our best. Every practice brought us closer as a team. We laughed, corrected mistakes, and encouraged each other whenever someone felt tired.
-       <br>
-When the day of the competition came, we gave everything we had on the stage. All the effort, time, and dedication we gave during practice paid off because our section was announced as the champion. The moment felt overwhelming. We felt proud, happy, and relieved at the same time.
-<br>
-What made the victory even more special was that it made us a back to back champion after also winning the Nutrichant competition. Because of these achievements, many students and teachers in the school started recognizing our section. It felt amazing to see how our teamwork, determination, and unity led us to success. This experience reminded me that when a group works hard and supports each other, great things happen.</p>
-       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));"><img src="https://drive.google.com/thumbnail?id=1upZaBtecXW9QR_uQ29OO7IyKKD8G_6SU" alt="VPOP Activity 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1CvbQBBVR33L2YMF18K1t58CnvWqtYJux" alt="VPOP Activity 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1puMXBD-5_PNJxJJwwlLnzta_zj7v-HB8" alt="VPOP Activity 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">Add your VPOP event content here. This event showcases student creativity and talent through visual and performance elements.</p>
+       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <img src="https://drive.google.com/thumbnail?id=1upZaBtecXW9QR_uQ29OO7IyKKD8G_6SU" alt="VPOP 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1CvbQBBVR33L2YMF18K1t58CnvWqtYJux" alt="VPOP 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1puMXBD-5_PNJxJJwwlLnzta_zj7v-HB8" alt="VPOP 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
        </div>
       </div>
-     </div>
-    </section>
-   </div>
-  </div>
-  <script>
-    lucide.createIcons();
-
-    const defaultConfig = {
-      page_title: "My School Events",
-      intro_text: "A showcase of the events, activities, and experiences that have shaped my academic journey and personal growth."
-    };
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange: async (config) => {
-          const c = { ...defaultConfig, ...config };
-          
-          const titleEl = document.getElementById('page-title');
-          if (titleEl) {
-            titleEl.textContent = c.page_title;
-          }
-
-          const subtitleEl = document.getElementById('intro-text');
-          if (subtitleEl) {
-            subtitleEl.textContent = c.intro_text;
-          }
-        },
-        mapToCapabilities: (config) => ({
-          recolorables: [],
-          borderables: [],
-          fontEditable: undefined,
-          fontSizeable: undefined
-        }),
-        mapToEditPanelValues: (config) => {
-          const c = { ...defaultConfig, ...config };
-          return new Map([
-            ['page_title', c.page_title],
-            ['intro_text', c.intro_text]
-          ]);
-        }
-      });
-    }
-  </script>
-  <script>
-    const defaultConfig = {
-      page_title: "My School Events",
-      intro_text: "A showcase of the events, activities, and experiences that have shaped my academic journey and personal growth.",
-      background_color: "#fef7f0",
-      surface_color: "#ffffff",
-      text_color: "#2d2a26",
-      primary_color: "#e85d4c",
-      secondary_color: "#6b8f71",
-      font_family: "DM Sans",
-      font_size: 16
-    };
-
-    async function onConfigChange(config) {
-      // Update text content
-      document.getElementById('page-title').textContent = config.page_title || defaultConfig.page_title;
-      document.getElementById('intro-text').textContent = config.intro_text || defaultConfig.intro_text;
-
-      // Update colors
-      const bgColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_color || defaultConfig.primary_color;
-      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
-
-      document.documentElement.style.setProperty('--color-bg', bgColor);
-      document.documentElement.style.setProperty('--color-surface', surfaceColor);
-      document.documentElement.style.setProperty('--color-text', textColor);
-      document.documentElement.style.setProperty('--color-primary', primaryColor);
-      document.documentElement.style.setProperty('--color-secondary', secondaryColor);
-
-      document.body.style.backgroundColor = bgColor;
-      document.body.style.color = textColor;
-
-      // Update font
-      const fontFamily = config.font_family || defaultConfig.font_family;
-      const fontSize = config.font_size || defaultConfig.font_size;
-      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
-      document.body.style.fontSize = `${fontSize}px`;
-    }
-
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => { config.text_col
+     </div><!-- 4th Quarter Events Grid -->
+     <div class="grid grid-cols-1 xl:grid-cols-3 gap-8" id="q4-events" style="display: none;">
+      <!-- Event 1: Miting de Advance -->
+      <div class="event-card stagger-1 rounded-2xl overflow-hidden p-8">
+       <div class="event-header rounded-lg p-4 mb-6">
+        <div class="flex items-center gap-3">
+         <i data-lucide="vote" class="w-6 h-6"></i> <span>MITING DE ADVANCE</span>
+        </div>
+       </div>
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">Miting de Advance helped me understand the importance of leadership and responsible voting inside the school. During the event, the candidates presented their platforms, goals, and plans for the students. I listened carefully to their speeches and observed how they expressed their ideas and promises. This event showed how student leaders guide activities and represent the voice of the student body. It helped me see how leadership requires confidence, clear plans, and the willingness to serve others.<br><br>
+        I apply this lesson by becoming more aware of how I choose leaders and by paying attention to their plans and actions. I also show participation by listening respectfully and supporting fair elections in school. If I explain this to a classmate, I describe Miting de Advance as an event where candidates present their ideas before the election so students know who deserves their vote. This event holds value because it promotes student participation, responsible decision making, and awareness about leadership within the school community.</p>
+       <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+        <img src="https://drive.google.com/thumbnail?id=11bTpFH01PeM7JT08HaafPnTSKdx0mAP7" alt="Miting de Advance 1" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1m1_FjMYPpIwusdXbfjm6zs5JuhJMx1Q-" alt="Miting de Advance 2" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';"> <img src="https://drive.google.com/thumbnail?id=1TnEaKR-IKr41cwJhtbFBwPZ_PFyaCR7E" alt="Miting de Advance 3" loading="lazy" style="height: 150px; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, rgba(0,212,255,0.2), rgba(14,165,233,0.2))'; this.alt='Image unavailable';">
+       </div>
+      </div><!-- Event 2: Battle of the Bands -->
+      <div class="event-card stagger-2 rounded-2xl overflow-hidden p-8">
+       <div class="event-header rounded-lg p-4 mb-6">
+        <div class="flex items-center gap-3">
+         <i data-lucide="music" class="w-6 h-6"></i> <span>BATTLE OF THE BANDS</span>
+        </div>
+       </div>
+       <p class="text-cyan-100 mb-6 leading-relaxed text-sm">Battle of the Bands showed the value of teamwork, dedication, and musical talent among students. Different bands performed songs in front of the school community, and each group displayed their effort through practice and coordination. I watched the performances and saw how the members worked together to create strong and entertaining music. Their confidence on stage showed the result of preparation and cooperation. The event created an atmosphere where students appreciated music and talent.<br><br>
+        This lesson applies to real life through teamwork and discipline. Strong results appear when people cooperate and practice their skills. If I explain this to a classmate, I describe Battle of the Bands as a competition where student bands perform and judges select the best group based on musical performance. The school benefits from this event because it gives students a chance to express their talents, gain confidence, and support one another through music.</p>
+       <div c
